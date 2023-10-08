@@ -205,18 +205,18 @@ table {
 
   .titulo {
     font-size: calc(var(--font-size-js) * 4.5vw);
-    margin-bottom: calc(var(--font-size-js) * 1.75vw);
+    margin-bottom: calc(var(--font-size-js) * 2.15vw);
 
   }
 
   .subtitulo {
     font-size: calc(var(--font-size-js) * 4.15vw);
-    margin-bottom: calc(var(--font-size-js) * 1.5vw);
+    margin-bottom: calc(var(--font-size-js) * 2vw);
   }
 
   .texto {
-    font-size: calc(var(--font-size-js) * 3.9vw);
-    line-height: calc(var(--font-size-js) * 5vw);
+    font-size: calc(var(--font-size-js) * 4vw);
+    line-height: calc(var(--font-size-js) * 6.85vw);
   }
 
 }

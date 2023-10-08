@@ -141,7 +141,7 @@
     }
 
     .impactos img {
-        margin: 5vw 0 1.5vw 0;
+        margin: 3vw 0 1.5vw 0;
         width: calc(var(--tamanho-img) * 40vw);
         height: calc(var(--tamanho-img) * 25vw);
     }

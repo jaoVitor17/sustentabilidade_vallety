@@ -86,7 +86,12 @@
 @media (max-width: 500px) {
 
     .benefcios .conteudo {
-        width: 60vw;
+        width: 85vw;
+    }
+
+
+    .benefcios {
+        flex-direction: column;
     }
 
     .benefcios .texto {
@@ -94,12 +99,8 @@
     }
 
     .benefcios img {
-        width: calc(var(--tamanho-img) * 30vw);
-        height: calc(var(--tamanho-img) * 30vw);
-    }
-
-    .benefcios.img_130 img {
         width: calc(var(--tamanho-img) * 45vw);
+        height: calc(var(--tamanho-img) * 30vw);
     }
 
     .ex_acoes {

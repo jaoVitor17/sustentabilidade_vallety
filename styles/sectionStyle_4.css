@@ -107,7 +107,7 @@
         padding: 2.5vw 5vw;
     }
 
-    .ex_acoes.txt_125 .itens {
+    .ex_acoes .itens {
         margin-top: 5vw;
         grid-column-start: 1;
         grid-column-end: 3;

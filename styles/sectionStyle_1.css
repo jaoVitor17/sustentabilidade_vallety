@@ -358,7 +358,7 @@
 
     .topicos_lista .texto {
         line-height: calc(var(--font-size-js) * 4vw);
-        font-size: calc(var(--font-size-js) * 3.5vw);
+        font-size: calc(var(--font-size-js) * 3.75vw);
     }
 
     /* acessbilidade */

@@ -1,15 +1,15 @@
 /* ações sustentaveis */
 
-.acoes_susten,
-.aplicar_acoes {
+.sessao_2,
+.sessao_4 {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1.25vw;
 }
 
-.acoes_susten .conteudo,
-.aplicar_acoes .conteudo {
+.sessao_2 .conteudo,
+.sessao_4 .conteudo {
     flex-basis: 60vw;
     border-radius: 1vw;
     background-color: var(--cor-segundaria);
@@ -18,19 +18,19 @@
 
 /* como aplicar as ações */
 
-.aplicar_acoes .conteudo {
+.sessao_4 .conteudo {
     width: 65vw;
 }
 
 /* impactos */
 
-.impactos {
+.sessao_6 {
     position: relative;
     padding: 2.25vw 10vw;
 
 }
 
-.impactos .lista {
+.sessao_6 .lista {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -45,19 +45,19 @@
     text-align: center;
 }
 
-.impactos .titulo {
+.sessao_6 .titulo {
     grid-column-start: 1;
     grid-column-end: 4;
 }
 
-.impactos .itens {
+.sessao_6 .itens {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     grid-row: 2;
 }
 
-.impactos img {
+.sessao_6 img {
     margin-bottom: 1vw;
     width: calc(var(--tamanho-img) * 17vw);
     height: calc(var(--tamanho-img) * 17vw);
@@ -68,40 +68,40 @@
 /* tablet */
 @media (max-width: 850px) {
 
-    .acoes_susten,
-    .aplicar_acoes {
+    .sessao_2,
+    .sessao_4 {
         padding: 1.75vw 0;
     }
 
-    .acoes_susten .conteudo,
-    .aplicar_acoes .conteudo {
+    .sessao_2 .conteudo,
+    .sessao_4 .conteudo {
         flex-basis: 77.5vw;
         padding: 2.5vw;
     }
 
-    .acoes_susten .texto,
-    .aplicar_acoes .texto {
+    .sessao_2 .texto,
+    .sessao_4 .texto {
         margin-left: 1vw;
     }
 
 
-    .impactos {
+    .sessao_6 {
         padding: 2vw;
     }
 
-    .impactos .lista {
+    .sessao_6 .lista {
         padding: 3vw;
         justify-content: center;
     }
 
-    .impactos.txt_125 .itens:nth-child(4) {
+    .sessao_6.txt_125 .itens:nth-child(4) {
         grid-column-start: 1;
         grid-column-end: 3;
         grid-row: 3;
         width: 85%;
     }
 
-    .impactos img {
+    .sessao_6 img {
         margin: 1vw 0 1.5vw 0;
         width: calc(var(--tamanho-img) * 20vw);
         height: calc(var(--tamanho-img) * 20vw);
@@ -111,36 +111,36 @@
 /* celular  */
 @media (max-width: 500px) {
 
-    .acoes_susten,
-    .aplicar_acoes {
+    .sessao_2,
+    .sessao_4 {
         padding: 4vw 0;
     }
 
-    .acoes_susten .conteudo,
-    .aplicar_acoes .conteudo {
+    .sessao_2 .conteudo,
+    .sessao_4 .conteudo {
         flex-basis: 90vw;
     }
 
-    .acoes_susten .texto,
-    .aplicar_acoes .texto {
+    .sessao_2 .texto,
+    .sessao_4 .texto {
         margin-left: 1.75vw;
     }
 
-    .impactos {
+    .sessao_6 {
         padding: 4vw;
     }
 
-    .impactos .lista {
+    .sessao_6 .lista {
         display: flex;
         flex-direction: column;
     }
 
 
-    .impactos .itens {
+    .sessao_6 .itens {
         width: 90%;
     }
 
-    .impactos img {
+    .sessao_6 img {
         margin: 3vw 0 1.5vw 0;
         width: calc(var(--tamanho-img) * 40vw);
         height: calc(var(--tamanho-img) * 25vw);

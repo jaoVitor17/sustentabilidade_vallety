@@ -5,6 +5,7 @@
 @import url("sectionStyle_4.css");
 @import url("footer.css");
 @import url("formularios.css");
+@import url("menu.css");
 
 
 :root {
@@ -17,7 +18,7 @@
   --cor-text-menu: #c9c2c0;
   --cor-menu-2: #e4b7a0;
 
-    /* modo claro padrão */
+    /* modo escuro padrão */
   --cor-principal: #292626;
   --cor-principal-deg: #302d2cc9;
   --cor-segundaria: #413d3c;

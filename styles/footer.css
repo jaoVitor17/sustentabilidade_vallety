@@ -65,6 +65,12 @@
     grid-column-end: 4;
 }
 
+.logo_escola {
+    width: 12vw;
+    margin-bottom: 1.5vw;
+    z-index: 5;
+}
+
 @media (max-width: 850px) {
     .footer {
         padding: 3vw;

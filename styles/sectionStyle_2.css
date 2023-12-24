@@ -1,7 +1,7 @@
 /* importancia da sustentabilidade */
 
-.importancia,
-.mudar {
+.sessao_1,
+.sessao_7 {
     position: relative;
     display: flex;
     justify-content: center;
@@ -11,12 +11,12 @@
     border-top: var(--borda);
 }
 
-.importancia {
+.sessao_1 {
     border-bottom: var(--borda);
 }
 
-.importancia::before,
-.mudar::before {
+.sessao_1::before,
+.sessao_7::before {
     top: 0;
     left: 0;
     background-image: var(--background-card);
@@ -26,26 +26,26 @@
     z-index: -1;
 }
 
-.importancia .conteudo,
-.mudar .conteudo {
+.sessao_1 .conteudo,
+.sessao_7 .conteudo {
     width: 62.5vw;
 }
 
-.importancia .texto,
-.mudar .texto {
+.sessao_1 .texto,
+.sessao_7 .texto {
     margin-left: 1vw;
 }
 
 /* tablet */
 @media (max-width: 850px) {
 
-    .importancia,
-    .mudar {
+    .sessao_1,
+    .sessao_7 {
         padding: 2.5vw 0;
     }
 
-    .importancia .conteudo,
-    .mudar .conteudo {
+    .sessao_1 .conteudo,
+    .sessao_7 .conteudo {
         width: 75vw;
     }
 }
@@ -53,18 +53,18 @@
 /* celular  */
 @media (max-width: 500px) {
 
-    .importancia,
-    .mudar {
+    .sessao_1,
+    .sessao_7 {
         padding: 5vw 0;
     }
 
-    .importancia .conteudo,
-    .mudar .conteudo {
+    .sessao_1 .conteudo,
+    .sessao_7 .conteudo {
         width: 90vw;
     }
 
-    .importancia .texto,
-    .mudar .texto {
+    .sessao_1 .texto,
+    .sessao_7 .texto {
         margin-left: 2vw;
     }
 }

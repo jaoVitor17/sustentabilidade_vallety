@@ -1,46 +1,42 @@
 var aberto = false
-var checkbox = document.querySelector('#menu_input');
+const checkbox = document.querySelector('#menu_input')
+const nav = document.querySelector('.configuracao')
+const label = document.querySelector('.clic_js')
 
-document.addEventListener('click', function (event) {
-    var target = event.target;
-    var label = document.querySelector('.clic_js');
-    var nav = document.querySelector('.configuracao');
-    if (target === checkbox) {
-
-    } else {
-
-
+document.addEventListener('click', (event) => {
+    const target = event.target
+    if (target !== checkbox) {
         if (target === label) {
             if (aberto) {
                 aberto = false
-                checkbox.checked = true;
+                checkbox.checked = true
 
             } else {
-                aberto = true;
-                checkbox.checked = false;
+                aberto = true
+                checkbox.checked = false
             }
         } else {
 
             if (target !== checkbox && target !== nav) {
-                checkbox.checked = false;
+                checkbox.checked = false
                 if (aberto) {
                     aberto = false
-                    checkbox.checked = false;
+                    checkbox.checked = false
 
                 }
             }
         }
     }
+})
 
-});
+nav.addEventListener('click', (event) =>{
+    event.stopPropagation()
+})
 
-var nav = document.querySelector('.configuracao')
-nav.addEventListener('click', function (event) {
-    event.stopPropagation();
-});
+// audio
 
-var input = document.querySelector('.menu_audio input');
-var menuAudio = document.querySelector('.menu_audio')
+const input = document.querySelector('.menu_audio input')
+const menuAudio = document.querySelector('.menu_audio')
 
 menuAudio.classList.add("transition")
 input.addEventListener("input", menu_audio)
@@ -56,85 +52,64 @@ function menu_audio() {
 
 // input type file 
 
-var Input = document.getElementById('input_foto');
-var Label = document.getElementById('label_foto');
-var texto_label = document.querySelector(".textolabel")
+const Input = document.getElementById('input_foto')
+const Label = document.getElementById('label_foto')
+const texto_label = document.querySelector(".textolabel")
 
-Input.addEventListener('change', function () {
-    const file = this.files[0];
+Input.addEventListener('change', () => {
+    const file = this.files[0]
     if (file) {
-        const reader = new FileReader();
+        const reader = new FileReader()
         reader.onload = function () {
-            Label.style.backgroundImage = `url('${reader.result}')`;
-        };
-        reader.readAsDataURL(file);
-        texto_label.style.cssText = "display: none;"
+            Label.style.backgroundImage = `url('${reader.result}')`
+        }
+        reader.readAsDataURL(file)
+        texto_label.style.cssText = "display: none"
     } else {
-        Label.style.backgroundImage = 'none';
+        Label.style.backgroundImage = 'none'
     }
-});
+})
 
-var fundo_element = document.querySelector(".formularios")
-var compartilhar_element = document.querySelector(".compartilhar")
-var comentar_element = document.querySelector(".comentar")
-var entrar_element = document.querySelector(".entrar")
+// formularios
 
-function compartilhar() {
-    checkbox.checked = false;
-    entrar_element.style.cssText = "display: none"
-    comentar_element.style.cssText = "display: none"
-    compartilhar_element.style.cssText = "display: block"
-    fundo_element.style.cssText = "display: block"
-}
-
-function comentar() {
-    checkbox.checked = false;
-    entrar_element.style.cssText = "display: none"
-    comentar_element.style.cssText = "display: block"
-    compartilhar_element.style.cssText = "display: none"
-    fundo_element.style.cssText = "display: block"
-}
-
-function entrar() {
-    checkbox.checked = false;
-    entrar_element.style.cssText = "display: block"
-    comentar_element.style.cssText = "display: none"
-    compartilhar_element.style.cssText = "display: none"
-    fundo_element.style.cssText = "display: block"
-}
+const fundo_element = document.querySelector(".formularios")
+const compartilhar_element = document.querySelector(".compartilhar")
+const comentar_element = document.querySelector(".comentar")
+const entrar_element = document.querySelector(".entrar")
 
 function fecharCompleto(form) {
 
-    const formulario_entrar = document.getElementById('form_e');
-    const formulario_comentar = document.getElementById('form_c');
+    const formulario_entrar = document.getElementById('form_e')
+    const formulario_comentar = document.getElementById('form_c')
 
 
     if (form) {
         if (formulario_entrar.checkValidity()) {
-            fechar();
+            fechar(["none", "none", "none", "none"])
         } else {
-            formulario_entrar.reportValidity();
+            formulario_entrar.reportValidity()
         }
     } else {
         if (formulario_comentar.checkValidity()) {
-            fechar();
+            fechar(["none", "none", "none", "none"])
         } else {
-            formulario_comentar.reportValidity();
+            formulario_comentar.reportValidity()
         }
     }
 }
 
-function fechar() {
-    checkbox.checked = false;
-    entrar_element.style.cssText = "display: none"
-    comentar_element.style.cssText = "display: none"
-    compartilhar_element.style.cssText = "display: none"
-    fundo_element.style.cssText = "display: none"
+function fechar(display) {
+    checkbox.checked = false
+
+    const forms = [entrar_element, comentar_element, compartilhar_element, fundo_element]
+
+    for (let i = 0; i < forms.length; i++) {
+        forms[i].style.cssText = `display: ${display[i]}`        
+    }
 }
 
 function nativo() {
-    fechar()
-    compartilhar()
+    fechar(["none", "none", "block", "block"])
     if (navigator.share !== undefined) {
         navigator.share({
             title: 'Sustentabilidade: Ações que mudam o mundo',

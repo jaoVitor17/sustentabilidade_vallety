@@ -29,9 +29,8 @@ function temaPadrao() {
 function mudarRoot() {
   resetcolor();
   if (modo) {
-    var mudancas = {
+    var root_prop = {
       // claro
-      // '--cor-header': '#c7c7c7',
       "--borda-menu": "solid .1vw #ebc4b0",
       "--cor-principal-deg": "none",
       "--menu-cor": "#191919",
@@ -55,8 +54,7 @@ function mudarRoot() {
     modo = false;
   } else {
     // escuro
-    var mudancas = {
-      // '--cor-header': 'rgba(25, 25, 25, 0.75)',
+    var root_prop = {
       "--borda-menu": "solid .1vw #ebc4b0",
       "--cor-principal-deg": "#302d2cc9",
       "--menu-cor": "#191919",
@@ -80,8 +78,8 @@ function mudarRoot() {
     modo = true;
   }
 
-  for (var prop in mudancas) {
-    root.style.setProperty(prop, mudancas[prop]);
+  for (var i in root_prop) {
+    root.style.setProperty(i, root_prop[i]);
   }
 }
 
@@ -89,27 +87,27 @@ function mudarRoot() {
 const txtMax = document.querySelectorAll("[txt_max]");
 const barraFont = document.querySelector("#progress_font_size");
 
-barraFont.addEventListener("input", texto())
+barraFont.addEventListener("input", fonte)
 
-function texto() {
+function fonte() {
+  
   document.querySelector(".fonte_tamanho").innerHTML = barraFont.value / 100;
   root.style.setProperty("--font-size-js", barraFont.value / 100);
 
   for (let i = 0; i < txtMax.length; i++) {
     let VtxtMax = parseInt(txtMax[i].attributes.txt_max.value);
     txtMax[i].classList.toggle(
-      `txt_ ${(txtMax[i].attributes.txt_max.value, barraFont.value > VtxtMax)}`
+      `txt_${(txtMax[i].attributes.txt_max.value)}`, barraFont.value > VtxtMax
     );
   }
 };
 
-function fonte() {}
 
 // tamanho img
 const barraImg = document.querySelector("#progress_img");
 const imgMax = document.querySelectorAll("[img_max]");
 
-barraImg.addEventListener("input", img())
+barraImg.addEventListener("input", img)
 
 function img(){
   document.querySelector(".img_tamanho").innerHTML = barraImg.value / 100;
@@ -118,7 +116,7 @@ function img(){
   for (let i = 0; i < imgMax.length; i++) {
     let VimgMax = parseInt(imgMax[i].attributes.img_max.value);
     imgMax[i].classList.toggle(
-      `img_ ${(imgMax[i].attributes.img_max.value, barraFont.value > VimgMax)}`
+      `img_${(imgMax[i].attributes.img_max.value)}`,barraFont.value > VimgMax
     );
   }
 };
@@ -135,7 +133,7 @@ function geral() {
   barraImg.value = barraGeral.value;
 
   img()
-  texto()
+  fonte()
 }
 
 // cores

@@ -50,25 +50,6 @@ function menu_audio() {
 }
 
 
-// input type file 
-
-const Input = document.getElementById('input_foto')
-const Label = document.getElementById('label_foto')
-const texto_label = document.querySelector(".textolabel")
-
-Input.addEventListener('change', () => {
-    const file = this.files[0]
-    if (file) {
-        const reader = new FileReader()
-        reader.onload = function () {
-            Label.style.backgroundImage = `url('${reader.result}')`
-        }
-        reader.readAsDataURL(file)
-        texto_label.style.cssText = "display: none"
-    } else {
-        Label.style.backgroundImage = 'none'
-    }
-})
 
 // formularios
 
@@ -76,6 +57,23 @@ const fundo_element = document.querySelector(".formularios")
 const compartilhar_element = document.querySelector(".compartilhar")
 const comentar_element = document.querySelector(".comentar")
 const entrar_element = document.querySelector(".entrar")
+const Input = document.getElementById('input_foto')
+const Label = document.getElementById('label_foto')
+const texto_label = document.querySelector(".textolabel")
+
+Input.addEventListener('change', function () {
+    const file = this.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function () {
+            Label.style.backgroundImage = `url('${reader.result}')`;
+        };
+        reader.readAsDataURL(file);
+        texto_label.style.cssText = "display: none;"
+    } else {
+        Label.style.backgroundImage = 'none';
+    }
+});
 
 function fecharCompleto(form) {
 
